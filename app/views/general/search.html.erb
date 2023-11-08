@@ -1,0 +1,45 @@
+<%= javascript_include_tag "dropdown.js", defer: true %>
+<%= javascript_include_tag "switch-views.js", defer: true %>
+
+<div class="search-options-bar">
+    <input type="text" placeholder="Search...">
+
+    <div class="dropdown">
+        <button onclick="OpenFilters()" class="filters-button">Filters</button>
+        <div id="filters" class="filters-content">
+            <p>test1</p>
+            <p>test2</p>
+            <p>test3</p>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button onclick="OpenSortBy()" class="sorting-button">Sort By</button>
+        <div id="sorting" class="sorting-methods">
+            <p>test1</p>
+            <p>test2</p>
+            <p>test3</P>
+        </div>
+    </div>
+</div>
+
+<div class="main-content">
+    <div class="sidebar">
+        <h2 class="results">Results</h2>
+
+        <!--- somehow use embedded ruby for loop to display returned restaurants using the sidebar-element partial-->
+        <%= render partial: "/shared/sidebar-element"%>
+    </div>
+
+    <div class="large-view">
+        <!--- these two divs should completely overlap, and use javascript to show or hide one depending on whether a restaurant is selected or not -->
+
+        <div id="restaurant" class="restaurant-view">
+            <!--- use this one for the restaurant page -->
+        </div>
+
+        <div id="map" class="map-view show">
+            <!--- use this one for the map view page -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<%= javascript_include_tag "switch-views.js", defer: true %>
+
+<!--- likely won't be user, but keeping here for now just in case -->
+
+<button onclick="SwitchRestaurantView()" class="sidebar-element">
+    <p class="restaurant-name">Test Name</p>
+
+    <div class="address-ratings">
+        <p class = "address">8888 Univeristy Drive, BC, PostCode |</p>
+        <p class = "ratings">4.3</p>
+    </div>
+
+    <div class="tags-cuisine">
+        <ul class="tags">
+            <li class="list-item">peanut free</li>
+            <li class="list-item">, </li>
+            <li class="list-item">vegan</li>
+        </ul>
+
+        <p class="cuisine">Cuisine: Italian</p>
+    </div>
+</button>

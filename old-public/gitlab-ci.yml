@@ -1,0 +1,18 @@
+image: alpine:latest
+
+pages:
+  stage: deploy
+  script:
+  - mkdir .public
+  - cp -r * .public
+  - mv .public public
+  artifacts:
+    paths:
+    - public
+  only:
+  - main
+
+test:
+  script:
+  - echo "This command runs on any branch casue I didn't specify 'only'. Also notice how the jobs are done differently."
+  - echo "You can run more then one too, and it could just be a script that you run that does all the things."
