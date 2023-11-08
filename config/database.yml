@@ -83,4 +83,4 @@ production:
   <<: *default
   database: mvrf_production
   username: mvrf
-  password: <%= ENV["MVRF_DATABASE_PASSWORD"] %>
+  password: <%= ENV["DATABASE_URL"] %>
