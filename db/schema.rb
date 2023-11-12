@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_05_192142) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_12_012820) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
@@ -22,11 +29,48 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_05_192142) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name"
+    t.string "owner"
+    t.string "address"
+    t.string "hours"
+    t.float "rating"
+    t.integer "ratingsnum"
+    t.text "description"
+    t.string "cuisine"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image"
+    t.string "tags"
+    t.boolean "gluten_intolerance"
+    t.boolean "vegan"
+    t.boolean "vegetarian"
+    t.boolean "nut_allergy"
+    t.boolean "fish_allergy"
+    t.boolean "egg_allergy"
+    t.boolean "soy_allergy"
+    t.boolean "dairy_allergy"
+    t.boolean "kosher"
+    t.boolean "halal"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.boolean "gluten_intolerance"
+    t.boolean "vegan"
+    t.boolean "vegetarian"
+    t.boolean "nut_allergy"
+    t.boolean "fish_allergy"
+    t.boolean "egg_allergy"
+    t.boolean "soy_allergy"
+    t.boolean "dairy_allergy"
+    t.boolean "kosher"
+    t.boolean "halal"
+    t.boolean "banned", default: false
   end
 
 end

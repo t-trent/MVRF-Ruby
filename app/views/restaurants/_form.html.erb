@@ -1,0 +1,105 @@
+<%= form_with model: restaurant do |form| %>
+    <div>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+    </div>
+
+    <div>
+        <%= form.label :owner %><br>
+        <%= form.text_field :owner %>
+    </div>
+
+    <div>
+        <%= form.label :address %><br>
+        <%= form.text_field :address %>
+    </div>
+
+    <div>
+        <%= form.label :hours %><br>
+        <%= form.text_field :hours %>
+    </div>
+
+    <div>
+        <%= form.label :rating %><br>
+        <%= form.number_field :rating, in: 0.0..5.0, step: 0.1 %>
+    </div>
+
+    <div>
+        <%= form.label :ratingsnum %><br>
+        <%= form.number_field :ratingsnum, step: 1 %>
+    </div>
+
+    <div>
+        <%= form.label :description %><br>
+        <%= form.text_area :description %>
+    </div>
+
+    <div>
+        <%= form.label :cuisine %><br>
+        <%= form.text_field :cuisine %>
+    </div>
+
+    <div>
+        <%= form.label :image %><br>
+        <%= form.text_field :image %>
+    </div>
+
+    <div>
+        <%= form.label :tags %><br>
+        <%= form.text_field :tags %>
+    </div>
+
+    <div>
+        <%= form.label :gluten_intolerance%><br>
+        <%= form.check_box :gluten_intolerance%>
+    </div>
+
+    <div>
+        <%= form.label :vegan %><br>
+        <%= form.check_box :vegan %>
+    </div>
+
+    <div>
+        <%= form.label :vegetarian %><br>
+        <%= form.check_box :vegetarian %>
+    </div>
+
+    <div>
+        <%= form.label :nut_allergy %><br>
+        <%= form.check_box :nut_allergy %>
+    </div>
+
+    <div>
+        <%= form.label :fish_allergy %><br>
+        <%= form.check_box :fish_allergy%>
+    </div>
+
+    <div>
+        <%= form.label :egg_allergy %><br>
+        <%= form.check_box :egg_allergy %>
+    </div>
+
+    <div>
+        <%= form.label :soy_allergy %><br>
+        <%= form.check_box :soy_allergy %>
+    </div>
+
+    <div>
+        <%= form.label :dairy_allergy %><br>
+        <%= form.check_box :dairy_allergy %>
+    </div>
+
+    <div>
+        <%= form.label :kosher %><br>
+        <%= form.check_box :kosher%>
+    </div>
+
+    <div>
+        <%= form.label :halal %><br>
+        <%= form.check_box :halal %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

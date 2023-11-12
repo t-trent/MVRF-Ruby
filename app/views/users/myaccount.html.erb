@@ -2,33 +2,103 @@
 
 <% @current_user = User.find_by_id(session[:user_id]) %>
 
-<!-- Title -->
-<h1>mvrf</h1>
-
 <h2>My Account</h2>
 
-<!-- Blurb -->
-<p>Configure account settings and access role-specific functions.</p>
-
-
-<!-- Content of the page goes here -->
+<p>Configure account details and choose your preferences.</p>
 
 <section class="accinfo_cont">
     <h2>My Information</h2>
-    <p>Email: </p>
-    <p>Username: <%= @current_user.username %></p>
-    <p>Change Password</p>
 
+    <div class="info-section">
+        <span class="label">Username:</span>
+        <span class="info"><%= @current_user.username %></span>
+    </div>
+
+    <div class="button-section">
+        <a href="<%= change_info_path(field: 'username', user_id: @current_user.id) %>" class="acc-form-button">Change Username</a>
+    </div>
+
+    <div class="info-section">
+        <span class="label">Email:</span>
+        <span class="info"><%= @current_user.email %></span>
+    </div>
+
+    <div class="button-section">
+        <a href="<%= change_info_path(field: 'email', user_id: @current_user.id) %>" class="acc-form-button">Change Email</a>
+    </div>
+
+    <div class="info-section">
+        <span class="label">Password:</span>
+        <span class="info"><%= '*' * @current_user.password.length %></span>
+    </div>
+    </div>
 </section>
+
 
 <section class="accinfo_cont">
-    <h2>My Preferences</h2>
-    <p>Edit Preferences</p>
+  <h2>My Preferences</h2>
+
+  <div class="info-section">
+    <span class="label">Gluten Intolerance:</span>
+    <span class="info"><%= @current_user.gluten_intolerance ? 'Yes' : 'No' %></span>
+  </div>
+
+  <div class="info-section">
+    <span class="label">Vegan:</span>
+    <span class="info"><%= @current_user.vegan ? 'Yes' : 'No' %></span>
+  </div>
+
+  <div class="info-section">
+    <span class="label">Vegetarian:</span>
+    <span class="info"><%= @current_user.vegetarian ? 'Yes' : 'No' %></span>
+  </div>
+
+  <div class="info-section">
+    <span class="label">Nut Allergy:</span>
+    <span class="info"><%= @current_user.nut_allergy ? 'Yes' : 'No' %></span>
+  </div>
+
+  <div class="info-section">
+    <span class="label">Fish Allergy:</span>
+    <span class="info"><%= @current_user.fish_allergy ? 'Yes' : 'No' %></span>
+  </div>
+
+  <div class="info-section">
+    <span class="label">Egg Allergy:</span>
+    <span class="info"><%= @current_user.egg_allergy ? 'Yes' : 'No' %></span>
+  </div>
+
+  <div class="info-section">
+    <span class="label">Soy Allergy:</span>
+    <span class="info"><%= @current_user.soy_allergy ? 'Yes' : 'No' %></span>
+  </div>
+
+  <div class="info-section">
+    <span class="label">Dairy Allergy:</span>
+    <span class="info"><%= @current_user.dairy_allergy ? 'Yes' : 'No' %></span>
+  </div>
+
+  <div class="info-section">
+    <span class="label">Kosher:</span>
+    <span class="info"><%= @current_user.kosher ? 'Yes' : 'No' %></span>
+  </div>
+
+  <div class="info-section">
+    <span class="label">Halal:</span>
+    <span class="info"><%= @current_user.halal ? 'Yes' : 'No' %></span>
+  </div>
+
+  <div class="button-section">
+    <a href="/change-preferences" class="acc-form-button">Change Preferences</a>
+  </div>
 </section>
 
-<section class="accinfo_cont"> <!-- will be hidden later --> 
-    <h2>My Restaurants</h2>
-    <p>Own a Restaurant?</p> 
+
+<section class="accinfo_cont">
+    <h2>Restaurants</h2>
+    <div class="button-section">
+        <span class="acc-form-button">Add a Restaurant</span>
+    </div>
 </section>
 
 <div class="form-container">
