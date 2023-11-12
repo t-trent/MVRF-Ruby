@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     get "sessions/success", to: "sessions#success", as: "session_success"
     get "sessions/error", to: "sessions#error", as: "session_error"
     get "my-account", to: "users#myaccount"
+    get "my_account", to: "users#myaccount"
     get 'change-info', to: 'users#change_info', as: :change_info
     post '/modify_info', to: 'users#modify_info', as: :modify_info
     get 'change-preferences', to: "users#change-preferences"
