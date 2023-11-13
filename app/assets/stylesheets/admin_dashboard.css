@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@800&family=Open+Sans:wght@700&display=swap');
+
+.admin-actions ul{
+    padding-left: 0;
+}
+.admin-actions li{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    list-style: none;
+    font-family: "Open Sans", sans-serif;
+    line-height: 5rem;
+    font-size: 1.6rem;
+    width: 25%;
+    color: white;
+    padding: 3px;
+    border: 2px solid #3B2822;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    
+}
+.admin-actions li:hover {
+    background-color: #dfc28a;
+}
+
+.admin-actions li a{
+    text-decoration: none;
+    color: #3B2822;
+}
+
+.admin_logout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.admin_logout_btn{
+    background-color: #EEBD59;
+    border-color: #3B2822;
+    border-radius: 20px;
+    border: 2.5px solid;
+    font-family: "Open Sans", sans-serif;
+    color: #3B2822;
+    font-size: 1.2rem;
+    padding: 10px 30px 10px 30px;
+    text-align: center;
+}

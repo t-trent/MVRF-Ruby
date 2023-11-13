@@ -1,0 +1,22 @@
+<% @current_user = User.find_by_id(session[:user_id]) %>
+
+<%= form_with model: restaurant do |form| %>
+    <div>
+        <%= form.label :rating %><br>
+        <%= form.text_field :rating, in 0.0..5.0, step: 1 %>
+    </div>
+
+    <div>
+        <%= form.label :content %><br>
+        <%= form.text_field :content %>
+    </div>
+
+    <%= hidden_field_tag "user_id", current_user.id%> 
+
+    <%= hidden_field_tag "restaurant_id", current_restaurant.id%>
+
+    <div>
+    <%= form.submit %>
+    </div>
+
+<% end %>

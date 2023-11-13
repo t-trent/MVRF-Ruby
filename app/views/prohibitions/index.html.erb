@@ -1,12 +1,14 @@
+<%= stylesheet_link_tag('user_status')%> 
 <h1>User Status</h1>
 
-<%= form_tag user_status_path, method: :get do%>
+<%= form_tag user_status_path, method: :get, class: "user_form" do%>
     <%= text_field_tag :search, params[:search], placeholder: "Search username" %>
-    <%= submit_tag ("Search")%>
+    <%= submit_tag "Search", class: "user_search_btn"%>
 <% end %>
 
 <% if @users.present?%>
-    <table>
+<div class="user-status-table">
+    <table class='table1'>
         <tr>
             <th>Username</th>
             <th>Status</th>
@@ -17,13 +19,14 @@
                     <td><%= user.username%></td>
                     <td><%= user.banned? ? 'Banned' : 'Active' %></td>
                     <% if user.banned? %>
-                        <td><%=button_to "Unban",unban_user_path(user), method: :post%></td>
+                        <td><%=button_to "Unban",unban_user_path(user), method: :post, class: 'unban_btn'%></td>
                     <% else %>
-                        <td><%=button_to "Ban",ban_user_path(user), method: :post%></td>
+                        <td><%=button_to "Ban",ban_user_path(user), method: :post, class: 'ban_btn'%></td>
                     <% end %>
                 </tr>
             <% end %>
-</table>
+    </table>
+</div>
 <%else%>
     <p>No users found in Database.</p>
 <% end %>

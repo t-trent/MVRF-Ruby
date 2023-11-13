@@ -1,12 +1,13 @@
 <h1>Restaurant Information</h1>
 
-<%= form_tag admin_restaurant_info_path, method: :get do%>
+<%= form_tag admin_restaurant_info_path, method: :get, class: "user_form" do%>
     <%= text_field_tag :search, params[:search], placeholder: "Search Restaurant's Name or Owner..." %>
-    <%= submit_tag "Search"%>
+    <%= submit_tag "Search", class: "user_search_btn"%>
 <% end %>
 
 <% if @restaurants.present?%>
-    <table>
+<div class="user-status-table">
+    <table class='table1'>
         <tr>
             <th>Restaurant Name</th>
             <th>Owner</th>
@@ -14,6 +15,7 @@
             <th>Opening Hours</th>
             <th>Address</th>
             <th>Description</th>
+            <th>Edit here!</th>
         </tr>
             <% @restaurants.each do |restaurant| %>
                 <tr>
@@ -36,7 +38,7 @@
                     <td><%= restaurant.hours%></td>
                     <td><%= restaurant.address%></td>
                     <td><%= restaurant.description%></td>
-                    <td><%=button_to "Edit"%></td>
+                    <td><%=button_to "Edit", restaurant_path(restaurant), method: :get, class: 'edit-info-btn'%></td>
                 </tr>
             <% end %>
 </table>

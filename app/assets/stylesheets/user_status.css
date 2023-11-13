@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@800&family=Open+Sans:wght@700&display=swap');
+
+.user_form{
+    text-align: center;
+}
+.user_search_btn{
+    background-color: #EEBD59;
+    border-color: #3B2822;
+    border-radius: 10px;
+    border: 2.5px solid;
+    font-family: "Open Sans", sans-serif;
+    color: #3B2822;
+    font-size: 1.2rem;
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+}
+.user_search_btn:hover{
+    background-color: #d7b369;
+}
+.user-status-table{
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;  
+}
+.user-status-table th, .user-status-table td{
+    border: 2px solid black;
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+}   
+.table1{
+    border-collapse: collapse;
+}
+.user-status-table th{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #3B2822;
+}
+.user-status-table td{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #3B2822;
+}

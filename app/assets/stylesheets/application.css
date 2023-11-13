@@ -17,7 +17,6 @@
  .flash-message {
     max-width: 600px;
     margin: 0 auto;
-    background-color: #ffcccc;
     padding: 10px;
     border-radius: 10px;
     text-align: center;
@@ -25,4 +24,23 @@
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
     color: #1c3359;
+    border: none;
  }
+
+ .flash-message.success{
+   background-color: #b8d8be;
+ }
+.flash-message.notice{
+   background-color: #ffe1ed;
+}
+.flash-message.additional_notice{
+   margin-top: 10px;
+   background-color: #ffe1ed;
+}
+.flash-message.alert{
+   background-color: #ffcccc;
+}
+.flash-message.additional_alert{
+   margin-top: 10px;
+   background-color: #ffcccc;
+}

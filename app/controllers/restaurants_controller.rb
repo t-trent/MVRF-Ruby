@@ -32,7 +32,11 @@ class RestaurantsController < ApplicationController
         @restaurant = Restaurant.find(params[:id])
 
         if @restaurant.update(restaurant_params)
-            redirect_to @restaurant
+            if admin_logged_in?
+                redirect_to admin_restaurant_info_path
+            else
+                redirect_to @restaurant
+            end
         else
             render :edit, status: :unprocessable_entity
         end
@@ -42,7 +46,11 @@ class RestaurantsController < ApplicationController
         @restaurant = Restaurant.find(params[:id])
         @restaurant.destroy
 
-        redirect_to search_path, status: :see_other
+        if admin_logged_in?
+            redirect_to admin_restaurant_info_path
+        else
+            redirect_to search_path, status: :see_other
+        end
     end
 
     private

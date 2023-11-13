@@ -138,8 +138,29 @@
     max-height: 750px;
     overflow-x: hidden;
     overflow-y: auto;
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .map-1 {
     height: 750px;
 }
+
+.restaurant-view {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.map-view {
+    display: none;  
+    height: 100%;    
+    width: 100%;     
+    background-color: transparent; 
+    box-shadow: none; 
+
+}
+
+.map-view.show {
+    display: block;
+}
+

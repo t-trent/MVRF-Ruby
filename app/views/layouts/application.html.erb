@@ -19,7 +19,7 @@
   
     <div class = "container">
       <% flash.each do |key, message| %>
-        <div class = "flash-message">
+        <div class = "flash-message <%= key %>">
           <%= message %>
         </div>
       <% end %>

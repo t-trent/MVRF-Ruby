@@ -6,7 +6,7 @@ class AdminsController < ApplicationController
     @admin = Admin.find_by(username: params[:username])
     if @admin && @admin.authenticate(params[:password])
       session[:admin_id] = @admin.id
-      flash[:notice] = "Logged in succesfully"
+      flash[:success] = "Logged in succesfully"
       redirect_to admin_dashboard_path
     else
       flash[:alert] = "Invalid email or password"
@@ -15,8 +15,8 @@ class AdminsController < ApplicationController
   end
 
   def destroy
+    flash[:success] = "Logged out of account."
     admin_log_out
-    flash[:notice] = "Logged out succesfully"
     redirect_to '/admin-login'
   end
 end

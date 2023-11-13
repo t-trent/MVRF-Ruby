@@ -20,8 +20,8 @@ Rails.application.routes.draw do
     get 'logout', to: 'sessions#logout'
     get "sign-up", to: "users#new"
     post "sign-up", to: "users#create"
-    get "users/success", to: "users#success", as: "user_success"
-    get "users/failure", to: "users#failure", as: "user_failure"
+    get "user/success", to: "users#success", as: "user_success"
+    get "user/failure", to: "users#failure", as: "user_failure"
     get "sessions/success", to: "sessions#success", as: "session_success"
     get "sessions/error", to: "sessions#error", as: "session_error"
     get "my-account", to: "users#myaccount"
@@ -45,7 +45,6 @@ Rails.application.routes.draw do
     post '/prohibitions/unban/:id', to: 'prohibitions#unban_user', as: "unban_user"
     get '/prohibitions/search/:search_term', to: 'prohibitions#search', as: "search_user"
 
-    get 'role_verification', to: 'dashboards#role_verification'
     get 'admin-restaurant_info', to: 'info_edit#show'
     get 'admin-restaurant_review', to: 'dashboards#restaurant_review'
 
