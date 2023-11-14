@@ -7,8 +7,13 @@ Rails.application.routes.draw do
     get "search", to: "restaurants#search"
     get "index", to: "general#index"
 
-    resources :restaurants
+    resources :restaurants do
+      resources :reviews
+    end
+
     get "restaurants/:id", to: "restaurants#show"
+    get "reviews/:id", to: "reviews#show"
+    get "reviews/new", to: "reviews#new"
 
     resources :contacts
     get "new-contact", to: "contacts#new"
@@ -20,10 +25,6 @@ Rails.application.routes.draw do
     get 'logout', to: 'sessions#logout'
     get "sign-up", to: "users#new"
     post "sign-up", to: "users#create"
-    get "user/success", to: "users#success", as: "user_success"
-    get "user/failure", to: "users#failure", as: "user_failure"
-    get "sessions/success", to: "sessions#success", as: "session_success"
-    get "sessions/error", to: "sessions#error", as: "session_error"
     get "my-account", to: "users#myaccount"
     get "my_account", to: "users#myaccount"
     get 'change-info', to: 'users#change_info', as: :change_info
@@ -35,6 +36,8 @@ Rails.application.routes.draw do
     get '/admin-login', to: 'admins#new'
     post '/admin-login', to: 'admins#create'
     delete '/admin-logout', to: 'admins#destroy'
+    get '/admin_signup', to: 'admin_signup#new'
+    post '/admin_signup', to: 'admin_signup#create'
 
     #Admin dashboard
     get 'dashboards/index', to: 'dashboards#index', as: "admin_dashboard"
@@ -46,7 +49,6 @@ Rails.application.routes.draw do
     get '/prohibitions/search/:search_term', to: 'prohibitions#search', as: "search_user"
 
     get 'admin-restaurant_info', to: 'info_edit#show'
-    get 'admin-restaurant_review', to: 'dashboards#restaurant_review'
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

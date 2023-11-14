@@ -1,3 +1,61 @@
+<style>
+.restaurant-form{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+.restaurant-form label {
+    display: block;
+}
+.restaurant-form input, .restaurant-form textarea, .restaurant-form select {
+    width: 20%;
+    box-sizing: border-box;
+    border: 2px solid #3B2822;
+    text-align: center;
+    height: 2rem;
+}
+.restaurant-form input{
+    margin-bottom: 2rem;
+}
+.restaurant-form textarea{
+    height: 5rem;
+}
+.dietary1, .dietary2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+.dietary1 input, .dietary2 input{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.update-btn{
+    font-family: 'Open Sans', sans-serif;
+    width: 30%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: 1px solid #3B2822;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 4rem auto;
+    display: block;
+}
+.update-btn:hover {
+    background-color: #555;
+}
+</style>
+
+
+<section class="restaurant-form">
 <%= form_with model: restaurant do |form| %>
     <div>
         <%= form.label :name %><br>
@@ -48,7 +106,7 @@
         <%= form.label :tags %><br>
         <%= form.text_field :tags %>
     </div>
-
+<section class="dietary1">
     <div>
         <%= form.label :gluten_intolerance%><br>
         <%= form.check_box :gluten_intolerance%>
@@ -73,7 +131,8 @@
         <%= form.label :fish_allergy %><br>
         <%= form.check_box :fish_allergy%>
     </div>
-
+</section>
+<section class="dietary2">
     <div>
         <%= form.label :egg_allergy %><br>
         <%= form.check_box :egg_allergy %>
@@ -98,8 +157,9 @@
         <%= form.label :halal %><br>
         <%= form.check_box :halal %>
     </div>
-
+</section>
+</section>
     <div>
-        <%= form.submit %>
+        <%= form.submit "Update Restaurant", class: 'update-btn'%>
     </div>
 <% end %>

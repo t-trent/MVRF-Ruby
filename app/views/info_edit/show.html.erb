@@ -1,10 +1,5 @@
 <h1>Restaurant Information</h1>
 
-<%= form_tag admin_restaurant_info_path, method: :get, class: "user_form" do%>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Restaurant's Name or Owner..." %>
-    <%= submit_tag "Search", class: "user_search_btn"%>
-<% end %>
-
 <% if @restaurants.present?%>
 <div class="user-status-table">
     <table class='table1'>
@@ -43,5 +38,5 @@
             <% end %>
 </table>
 <%else%>
-    <p>No users found in Database.</p>
+    <p>No restaurants found in Database.</p>
 <% end %>

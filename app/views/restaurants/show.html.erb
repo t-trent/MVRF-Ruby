@@ -1,10 +1,45 @@
+<style>
+.restaurant-form{
+    list-style: none;
+    padding-left: 0px;
+}
+.edit-restaurant, .remove-restaurant{
+    background-color: #EEBD59;
+    border-color: #3B2822;
+    border-radius: 15px;
+    border: 3px solid;
+    font-family: "Open Sans", sans-serif;
+    color: #3B2822;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 5rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.edit-restaurant{
+     margin-top: 3rem;
+}
+.edit-restaurant:hover{
+     background-color: #dfc28a;
+}
+.remove-restaurant:hover{
+     background-color: #dfc28a;
+}
+</style>
 <h1><%= @restaurant.name %></h1>
 
 <p><%= @restaurant.description %></p>
 
-<ul>
-    <li><%= link_to "Edit", edit_restaurant_path(@restaurant) %></li>
-    <li><%= link_to "Destroy", restaurant_path(@restaurant), data: {
+<ul class="restaurant-form">
+    <li><%= link_to "Edit Restaurant's Information", edit_restaurant_path(@restaurant), class: 'edit-restaurant' %></li>
+    <li><%= link_to "Remove Restaurant", restaurant_path(@restaurant),class: 'remove-restaurant', data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                     } %></li>

@@ -1,4 +1,24 @@
-<h1>New Review</h1>
+<h2>New Review</h2>
 
-<%= render "form", review: @review %>
+<%= @user = User.find(params[:id]) %>
+<%= @restaurant = Restaurant.find(params[:id]) %>
 
+<%= form_with model: review do |form| %>
+    <div>
+        <%= form.label :rating %><br>
+        <%= form.number_field :rating, in 0.0..5.0, step: 1 %>
+    </div>
+
+    <div>
+        <%= form.label :content %><br>
+        <%= form.text_field :content %>
+    </div>
+
+    <%= hidden_field_tag :restaurant, @restaurant %>
+    <%= hidden_field_tag :user, @user %>
+
+    <div>
+    <%= form.submit %>
+    </div>
+
+<% end %>
