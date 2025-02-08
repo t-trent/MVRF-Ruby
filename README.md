@@ -1,4 +1,4 @@
-<img width="1697" alt="search-restaurants" src="https://github.com/user-attachments/assets/c3193e99-ff8d-4caa-b8ad-7c90f23c3340" /># Metro Vancouver Restaurant Finder (MVRF)
+# Metro Vancouver Restaurant Finder (MVRF)
 
 ## Table of Contents
 - [Introduction](#introduction)
