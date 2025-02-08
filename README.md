@@ -1,4 +1,4 @@
-# Metro Vancouver Restaurant Finder (MVRF)
+<img width="1697" alt="search-restaurants" src="https://github.com/user-attachments/assets/c3193e99-ff8d-4caa-b8ad-7c90f23c3340" /># Metro Vancouver Restaurant Finder (MVRF)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -11,6 +11,7 @@
 - [Testing](#testing)
 - [Limitations & Future Improvements](#limitations--future-improvements)
 - [Team](#team)
+- [Screenshots](#screenshots)
 
 ## Introduction
 Metro Vancouver Restaurant Finder (MVRF) is a web application designed to help users find restaurants in Metro Vancouver while focusing on dietary restrictions and preferences. Users can create an account to store their preferences and access information about their saved restaurants.
@@ -96,13 +97,37 @@ Existing restaurant-finding platforms like Yelp, Google Maps, and TripAdvisor do
 - **Sorting & Filtering**: More advanced search filtering is planned for future updates.
 
 ## Team
-- **Trent Carlson** - Team Leader
+- **Trent Carlson** - Team Leader & Developer
 - **The Vi Phung** - Developer
+- **Milan Lort** - Developer
 - **Alexandra Chamchorine** - Developer
 - **Thu Hoai An Nguyen** - Developer
 
 ## Contributions
-We used GitLab for version control, issue tracking, and pull requests to collaborate efficiently. Weekly meetings and daily discussions via Discord helped us stay on track.
+We used GitLab for version control, issue tracking, and pull requests to collaborate efficiently. Weekly meetings and daily discussions via Discord helped us stay on track. This project has been added to GitHub for visibility.
 
----
-**MVRF** is a step toward making restaurant discovery more inclusive for people with dietary restrictions! Thank you for checking out our project!
+## Screenshots
+
+### Landing
+![](https://github.com/t-trent/MVRF-Ruby/blob/main/public/landing.png)
+
+### Search Restaurants
+![](https://github.com/t-trent/MVRF-Ruby/blob/main/public/search-restaurants.png)
+
+### Login
+![](https://github.com/t-trent/MVRF-Ruby/blob/main/public/login.png)
+
+### Sign Up
+![](https://github.com/t-trent/MVRF-Ruby/blob/main/public/signup.png)
+
+### My Account
+![](https://github.com/t-trent/MVRF-Ruby/blob/main/public/my-account.png)
+
+### About Us
+![](https://github.com/t-trent/MVRF-Ruby/blob/main/public/about-us.png)
+
+### FAQ
+![](https://github.com/t-trent/MVRF-Ruby/blob/main/public/faq.png)
+
+### Contact Us
+![](https://github.com/t-trent/MVRF-Ruby/blob/main/public/contact-us.png)
